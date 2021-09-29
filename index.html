@@ -1,0 +1,25 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name=viewport content='width=device-width'>
+    <title> A-Frame layer demo </title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js'></script>
+    <script src='https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js'></script>
+    <script src='demo.js'></script>
+  </head>
+  <body>
+    <a-scene id='scene' environment='preset: starry' stats>
+      <a-assets>
+        <video id='project' src='assets/project.m4v' autoplay loop='true'></video>
+      </a-assets>
+
+      <a-entity id='spawner' spawner></a-entity>
+
+      <a-entity id='cameraRig' position='0 1.6 0' look-controls wasd-controls='enabled: true; acceleration: 100;'>
+        <a-entity id='camera' camera='active: true' raycaster='objects: .clickable' cursor='rayOrigin: mouse;'></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+
+</html>
